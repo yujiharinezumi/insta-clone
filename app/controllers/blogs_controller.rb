@@ -32,6 +32,12 @@ class BlogsController < ApplicationController
     else
       render :edit
     end
+
+    def destroy
+      @blog.destroy
+      redirect_to blogs_path, notice:"ブログを削除しました！"
+    end
+
   end
 
   private
