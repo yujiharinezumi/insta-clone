@@ -1,0 +1,15 @@
+<h1>ブログ一覧</h1>
+
+<table>
+  <tr>
+    <th>画像</th>
+    <th>内容</th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= image_tag blog.image.url %></td>
+    <td><%= blog.content %></td>
+  </tr>
+<% end %>
+</table>
