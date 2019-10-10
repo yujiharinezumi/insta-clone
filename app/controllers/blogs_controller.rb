@@ -9,7 +9,11 @@ class BlogsController < ApplicationController
 
   def create
     @blog = Blog.create(blog_params)
-    redirect_to blogs_path
+    if @blog.save
+      redirect_to blogs_path, notice: "投稿しました！"
+    else
+      render :new
+    end
   end
 
   def show
@@ -17,7 +21,16 @@ class BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
+  end
 
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params)
+      redirect_to blogs_path, notice: "ブログの編集をしました！"
+    else
+      render :edit
+    end
   end
 
   private

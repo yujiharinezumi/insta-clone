@@ -2,19 +2,20 @@
 
 <table>
   <tr>
-    <th>画像</th>
+    <th>タイトル</th>
     <th>内容</th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
-
+    <td><%= image_tag blog.image.url %></td>
     <td><%= blog.content %></td>
-      <td><%= image_tag blog.image.url %></td>
 
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_blog_path(blog.id) %></td>
   </tr>
 <% end %>
 </table>
+
 
 <%= link_to '新しくブログを投稿する', new_blog_path %>
