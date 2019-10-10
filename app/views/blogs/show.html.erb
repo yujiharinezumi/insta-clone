@@ -1,2 +1,5 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<h1>About Post</h1>
+<p>content: <%= @blog.content %></p>
+<p>image: <%= image_tag @blog.image.url %></p>
+
+<%= link_to 'Back to Top page', blogs_path %>
