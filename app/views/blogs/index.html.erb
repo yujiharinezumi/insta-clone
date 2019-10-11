@@ -1,5 +1,7 @@
 <h1>ブログ一覧</h1>
 
+<p><%= notice %></p>
+
 <table>
   <tr>
     <th>タイトル</th>
@@ -8,7 +10,7 @@
 
 <% @blogs.each do |blog| %>
   <tr>
-    <td><%= image_tag blog.image.url %></td>
+    <td><%= image_tag blog.image.url%></td>
     <td><%= blog.content %></td>
 
     <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
