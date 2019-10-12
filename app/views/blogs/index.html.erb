@@ -4,12 +4,14 @@
 
 <table>
   <tr>
-    <th>タイトル</th>
+    <th>名前</th>
+    <th>画像</th>
     <th>内容</th>
   </tr>
 
 <% @blogs.each do |blog| %>
   <tr>
+    <td><%= blog.user.name%></td>
     <td><%= image_tag blog.image.url%></td>
     <td><%= blog.content %></td>
 
