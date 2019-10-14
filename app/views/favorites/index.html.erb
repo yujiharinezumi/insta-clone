@@ -1,0 +1,11 @@
+<h1>お気に入り一覧</h1>
+
+
+  <% @favorite.each do |f| %>
+
+    <p>ユーザー名：<%= f.user.name %></p>
+    <p><%= image_tag f.blog.image.url %></P
+    <p><%= f.blog.content%></p>
+  <% end %>
+
+  <%= link_to "投稿一覧", blogs_path%>
